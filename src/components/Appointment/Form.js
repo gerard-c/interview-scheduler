@@ -17,7 +17,7 @@ export default function From(props) {
   }
 
   const save = () => {
-    return props.onCancel(student, interviewer);
+    return props.onSave(student, interviewer);
   }
 
   return (
