@@ -19,13 +19,13 @@ export default function From(props) {
           />
         </form>
         <InterviewerList
-        /* your code goes here */
+          interviewers={props.interviewers}
         />
       </section>
       <section className="appointment__card-right">
         <section className="appointment__actions">
-          <Button danger {/* your code goes here */}>Cancel</Button>
-          <Button confirm {/* your code goes here */}>Save</Button>
+          <Button danger onClick={props.onCancel}>Cancel</Button>
+          <Button confirm onClick={props.onSave}>Save</Button>
         </section>
       </section>
     </main>
