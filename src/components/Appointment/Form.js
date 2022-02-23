@@ -20,6 +20,7 @@ export default function From(props) {
         </form>
         <InterviewerList
           interviewers={props.interviewers}
+          value={props.interviewer}
         />
       </section>
       <section className="appointment__card-right">
