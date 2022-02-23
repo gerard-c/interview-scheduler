@@ -12,9 +12,13 @@ export default function From(props) {
   }
 
   const cancel = () => {
+    console.log(props);
     reset();
-    return props.onCancel;
+    return props.onCancel();
   }
+
+  console.log(cancel);
+  console.log(props.onCancel);
 
   return (
     <main className="appointment__card appointment__card--create">
