@@ -51,19 +51,30 @@ export default function Application(props) {
     days: [],
     appointments: {}
   });
+
+  const dailyAppointments = [];
   
   const setDay = day => setState({ ...state, day });
 
-  const setDays = days => setState(prev => ({ ...prev, days }));
+  // const setDays = days => setState(prev => ({ ...prev, days }));
 
   useEffect(() => {
-    axios
-      .get('/api/days')
-      .then(res => setDays(res.data));
+    Promise.all([
+      axios.get('/api/days'),
+      axios.get('/api/appointments'),
+      axios.get('/api/interviewers')
+    ]).then(all => {
+      console.log(all[0]);
+      console.log(all[1]);
+      console.log(all[2]);
+
+      const [first, second, third] = all;
+      console.log(first.data, second.data, third.data);
+    })
   }, []);
 
 
-  const scheduleItems = appointments.map(appointment => {
+  const scheduleItems = dailyAppointments.map(appointment => {
     return <Appointment key={appointment.id} {...appointment} />
   })
 
