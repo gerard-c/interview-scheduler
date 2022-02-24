@@ -64,12 +64,11 @@ export default function Application(props) {
       axios.get('/api/appointments'),
       axios.get('/api/interviewers')
     ]).then(all => {
-      console.log(all[0]);
-      console.log(all[1]);
-      console.log(all[2]);
+      const daysData = all[0].data
+      const appointmentsData = all[1].data
+      const interviewersData = all[2].data
 
-      const [first, second, third] = all;
-      console.log(first.data, second.data, third.data);
+      setState(prev => ({ ...prev, days: daysData, appointments: appointmentsData }))
     })
   }, []);
 
