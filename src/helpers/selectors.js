@@ -27,3 +27,7 @@ export function getAppointmentsForDay(state, day) {
   }
   return resultsArray;
 }
+
+export function getInterview(state, interview) {
+  let interviewObject = null;
+}
