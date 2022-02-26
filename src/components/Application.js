@@ -36,6 +36,7 @@ export default function Application(props) {
   }, []);
 
   const dailyAppointments = getAppointmentsForDay(state, state.day);
+  const dailyInterviewers = getInterviewersForDay(state, state.day);
 
   const scheduleItems = dailyAppointments.map(appointment => {
     const interview = getInterview(state, appointment.interview);
@@ -44,6 +45,7 @@ export default function Application(props) {
         key={appointment.id}
         {...appointment}
         interview={interview}
+        interviewers={dailyInterviewers}
       />
     );
   });
