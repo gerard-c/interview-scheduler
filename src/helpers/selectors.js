@@ -49,3 +49,33 @@ export function getInterview(state, interview) {
 
   return interviewObject;
 }
+
+export function getInterviewersForDay(state, day) {
+  const resultsArray = [];
+  let targetDay = null;
+
+  if (!state.days.length) {
+    return resultsArray;
+  }
+
+  const interviewersArray = Object.values(state.interviewers);
+
+  for (const item of state.days) {
+    if (item.name === day) {
+      targetDay = item;
+    }
+  }
+
+  if (!targetDay) {
+    return resultsArray;
+  }
+
+  for (const interviewerId of targetDay.interviewers) {
+    for (const interviewer of interviewersArray) {
+      if (interviewerId === interviewer.id) {
+        resultsArray.push(interviewer);
+      }
+    }
+  }
+  return resultsArray;
+}
