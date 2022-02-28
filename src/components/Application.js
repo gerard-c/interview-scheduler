@@ -51,7 +51,7 @@ export default function Application(props) {
       appointments
     });
 
-    return axios.delete(`/api/appointments/${id}`)
+    return axios.delete(`/api/appointments/${id}`);
   }
 
   useEffect(() => {
