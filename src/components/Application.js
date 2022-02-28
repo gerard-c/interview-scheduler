@@ -32,6 +32,9 @@ export default function Application(props) {
       ...state,
       appointments
     });
+
+    axios.put(`/api/appointments/${id}`, appointment)
+      .catch(err => console.log('Put interview error: ', err.message));
   }
 
   useEffect(() => {
@@ -50,7 +53,7 @@ export default function Application(props) {
         appointments: appointmentsData,
         interviewers: interviewersData
       }));
-    })
+    }).catch(err => console.log('Get appointments error: ', err.message))
   }, []);
 
   const dailyAppointments = getAppointmentsForDay(state, state.day);
