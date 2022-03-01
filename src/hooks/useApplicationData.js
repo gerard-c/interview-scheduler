@@ -23,11 +23,11 @@ export function useApplicationData() {
     };
 
     const days = [...state.days]
-    
+
     const index = days.map(day => day.name).indexOf(state.day);
 
     const day = days[index]
-    
+
     if (!state.appointments[id].interview) {
       day.spots--;
     }
@@ -59,11 +59,11 @@ export function useApplicationData() {
     const days = [...state.days];
 
     const index = days.map(day => day.name).indexOf(state.day);
-    
+
     const day = days[index];
-    
+
     day.spots++;
-    
+
     days[index] = day;
 
     return axios
