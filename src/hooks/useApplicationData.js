@@ -60,7 +60,6 @@ export function useApplicationData() {
     const days = [...state.days];
 
     const index = days.map(day => day.name).indexOf(state.day);
-    console.log(state.day.name);
     
     const day = days[index];
     
