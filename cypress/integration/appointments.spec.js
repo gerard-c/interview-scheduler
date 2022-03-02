@@ -58,6 +58,5 @@ describe('Appointments', () => {
 
     cy.contains('.appointment__card--show', 'Archie Cohen')
       .should('not.exist');
-
-  })
+  });
 });
