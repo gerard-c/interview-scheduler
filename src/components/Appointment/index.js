@@ -20,17 +20,12 @@ export default function Appointment(props) {
   const EDIT = 'EDIT';
   const ERROR_SAVE = 'ERROR_SAVE';
   const ERROR_DELETE = 'ERROR_DELETE';
-  const ERROR_MISSING = 'ERROR_MISSING';
 
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
 
   const save = (name, interviewer) => {
-    if (!name || !interviewer) {
-      return transition(ERROR_MISSING, true);
-    }
-
     const interview = {
       student: name,
       interviewer
@@ -74,7 +69,6 @@ export default function Appointment(props) {
       {mode === DELETING && <Status message="Deleting..." />}
       {mode === ERROR_DELETE && <Error message="Could not cancel appointment" onClose={() => back()} />}
       {mode === ERROR_SAVE && <Error message="Could not save appointment" onClose={() => back()} />}
-      {mode === ERROR_MISSING && <Error message="Interviewer and/or name are missing" onClose={() => back()} />}
       {mode === CONFIRM && (
         <Confirm
           message="Are you sure you would like to delete?"
