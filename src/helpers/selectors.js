@@ -6,7 +6,7 @@ export function getAppointmentsForDay(state, day) {
     return resultsArray;
   }
 
-  // const appointmentsArray = Object.values(state.appointments);
+  const appointmentsArray = Object.values(state.appointments);
 
   for (const item of state.days) {
     if (item.name === day) {
