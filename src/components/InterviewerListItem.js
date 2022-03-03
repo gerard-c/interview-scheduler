@@ -2,6 +2,8 @@ import React from 'react';
 import classNames from 'classnames';
 import 'components/InterviewerListItem.scss';
 
+// Individual interviewer display pictures which, when clicked, become "selected," displaying the interviewer name
+
 export default function InterviewerListItem(props) {
   const interviewerClass = classNames('interviewers__item', {
     'interviewers__item--selected': props.selected

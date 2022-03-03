@@ -3,6 +3,8 @@ import classNames from "classnames";
 
 import "components/DayListItem.scss";
 
+// Discrete "day" components rendered on app's nav bar, displaying the name of the day and the amount of unbooked appointments remaining
+
 export default function DayListItem(props) {
   const dayClass = classNames('day-list__item', {
     'day-list__item--selected': props.selected,

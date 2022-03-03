@@ -1,5 +1,7 @@
 import React from "react";
 
+// Renders a spinner to indicate that an http request is in progress, along with a relevant message
+
 export default function Status(props) {
   return (
     <main className="appointment__card appointment__card--status">

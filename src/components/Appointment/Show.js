@@ -1,5 +1,7 @@
 import React from "react";
 
+// When an appointment slot has an interview booked, this component renders the relevant details, as well as the edit and delete buttons
+
 export default function Show(props) {
   return (
     <main className="appointment__card appointment__card--show">

@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "components/Button";
 
+// Rarely seen component that renders when a user tries to delete an existing interview slot
+
 export default function Confirm(props) {
   return (
     <main className="appointment__card appointment__card--confirm">

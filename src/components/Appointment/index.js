@@ -10,6 +10,8 @@ import { useVisualMode } from "hooks/useVisualMode";
 import "components/Appointment/styles.scss";
 import Confirm from "./Confirm";
 
+// Component manages the rendering of many different sub-components
+
 export default function Appointment(props) {
   const EMPTY = 'EMPTY';
   const SHOW = 'SHOW';
@@ -20,6 +22,8 @@ export default function Appointment(props) {
   const EDIT = 'EDIT';
   const ERROR_SAVE = 'ERROR_SAVE';
   const ERROR_DELETE = 'ERROR_DELETE';
+
+  // variables above are used by the transition function of the useVisualMode hook to manage the many different components that need to be rendered by the Appointment component, depending on the circumstances. The conditional logic governing these different circumstances can be seen within the render statement of this component function.
 
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY

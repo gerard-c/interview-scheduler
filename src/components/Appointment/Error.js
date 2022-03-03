@@ -1,5 +1,7 @@
 import React from "react";
 
+// Component renders only when an http request to update, create or delete an appointment fails
+
 export default function Error(props) {
   return (
     <main className="appointment__card appointment__card--error">

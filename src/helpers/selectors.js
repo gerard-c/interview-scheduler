@@ -1,3 +1,5 @@
+// Uses appointment information saved in state to generate an array of appointment objects related to a given day
+
 export function getAppointmentsForDay(state, day) {
   const resultsArray = [];
   let targetDay = null;
@@ -28,6 +30,8 @@ export function getAppointmentsForDay(state, day) {
   return resultsArray;
 }
 
+// Consolidates relevant information about students, interviews and interviewers into a singular object to be used as a prop by other components
+
 export function getInterview(state, interview) {
   const interviewObject = {
     student: '',
@@ -49,6 +53,8 @@ export function getInterview(state, interview) {
 
   return interviewObject;
 }
+
+// Generates an array of interviewers available on a specific day in a fashion similar to the first helper function in this file
 
 export function getInterviewersForDay(state, day) {
   const resultsArray = [];
